@@ -1,0 +1,25 @@
+{
+  "name": "roushankumar_nodejstask",
+  "version": "1.0.0",
+  "description": "create a Nodejs application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server":"nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoushanFW196/RoushanKumar_NodejsTask.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoushanFW196/RoushanKumar_NodejsTask/issues"
+  },
+  "homepage": "https://github.com/RoushanFW196/RoushanKumar_NodejsTask#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.1"
+  }
+}
