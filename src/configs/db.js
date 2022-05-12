@@ -1,9 +1,16 @@
 const mongoose = require('mongoose');
-
+const dotenv= require("dotenv");
+const path = require('path');
+dotenv.config({path:path.join(__dirname, './config.env')});
+const DB=process.env.DATABASE;
 
 
 module.exports = async()=>{
-    mongoose.connect("mongodb+srv://roushan6338:zmhh5ZXaA1V7j27U@cluster0.j5lhb.mongodb.net/test")
+  return  mongoose.connect(DB,{
+      useNewUrlParser:true,
+      useUnifiedTopology:true,
+     
+  })
 }
 
 

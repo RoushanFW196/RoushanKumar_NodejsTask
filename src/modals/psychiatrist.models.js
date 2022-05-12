@@ -9,9 +9,13 @@ const psychiatristSchema= new mongoose.Schema({
     pincode:{type:Number,required: true},
     state:{type:"string",required: true},
 
+},{
+    versionKey:false,
+    timestamps:true
 });
 
 
 
 
-export const psychiatrist=mongoose.model('psychiatrist',psychiatristSchema);
+ const psychiatrist=mongoose.model('psychiatrist',psychiatristSchema);
+ module.exports =psychiatrist;
