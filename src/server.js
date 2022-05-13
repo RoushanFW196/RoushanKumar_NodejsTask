@@ -9,7 +9,7 @@
  const psychiatristcontroller = require('./controller/psychiatrist.controller')
  const connect = require("./configs/db");
 app.use(express.json())
-
+app.use(express.static(__dirname));
 
 app.use("/patient",patientcontroller)
 app.use("/psychiatrist",psychiatristcontroller)

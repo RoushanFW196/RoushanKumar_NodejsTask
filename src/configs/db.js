@@ -8,9 +8,7 @@ const DB=process.env.MONGO_URL;
 module.exports = async()=>{
   return  mongoose.connect(DB,{
       useNewUrlParser:true,
-       useUnifiedTopology:true,
-     
-     
+       useUnifiedTopology:true,  
   })
 }
 

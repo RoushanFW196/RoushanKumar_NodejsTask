@@ -1,8 +1,12 @@
 
 const express=require('express');
 const router=express.Router();
+const path=require('path');
 const Patient=require("../modals/patient.model");
+const fs=require("fs");
 const{body,validationResult}=require("express-validator");
+
+ const upload=require("../utils/fileupload")
 
 
 router.get('/',(req, res)=>{
@@ -12,6 +16,7 @@ router.get('/',(req, res)=>{
 })
 
 router.post("/register",
+upload.single("patient_image"),
 body("countrycode").isNumeric().isLength({minlength:2}) ,
 body("name").isLength({min:3}),
 body("email").isEmail(),
@@ -30,7 +35,14 @@ async(req,res)=>{
   try{
     console.log("patient register",req.body)
      
-  const newpatient= await Patient.create(req.body)
+  const newpatient= await Patient.create({
+    name:req.body.name,
+    email:req.body.email,
+    mobile:req.body.mobile,
+    address:req.body.address,
+    password:req.body.password,
+    patient_image:req.file.path,
+  })
     
  
   
